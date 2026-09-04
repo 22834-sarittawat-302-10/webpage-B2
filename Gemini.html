@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าแนะนำตัว - Nature Glow Theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --emerald-glow: #00ff87;
+      --green-light: #6ee7b7;
+      --lime-neon: #a3e635;
+      --bg-dark: #061a14;
+      --card-bg: rgba(6, 38, 25, 0.75);
+      --text-bright: #ffffff;
+      --text-glow: #a7f3d0;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Prompt', sans-serif;
+      /* พื้นหลังธรรมชาติแบบมืดลึก ไล่เฉดสีเขียวป่า */
+      background: radial-gradient(circle at top, #0f382c 0%, #061a14 100%);
+      background-attachment: fixed;
+      color: var(--text-bright);
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* การ์ดพร้อมขอบเรืองแสงสีเขียว */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 135, 0.3);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      /* แสงเรืองแสงสีเขียวรอบขอบการ์ด */
+      box-shadow: 0 0 20px rgba(0, 255, 135, 0.15),
+                  inset 0 0 15px rgba(0, 255, 135, 0.05);
+      transition: all 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--emerald-glow);
+      box-shadow: 0 0 30px rgba(0, 255, 135, 0.35),
+                  inset 0 0 20px rgba(0, 255, 135, 0.1);
+    }
+
+    /* ส่วนโปรไฟล์ */
+    .profile-header {
+      text-align: center;
+    }
+
+    /* รูปโปรไฟล์พร้อมขอบเรืองแสงนีออนเขียว */
+    .profile-img-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--emerald-glow);
+      /* เอฟเฟกต์แสงเรืองแสงกระจายรอบรูป */
+      box-shadow: 0 0 25px var(--emerald-glow),
+                  0 0 50px rgba(0, 255, 135, 0.5);
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    /* แอนิเมชันให้แสงกระพริบนุ่มนวล */
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 20px var(--emerald-glow), 0 0 40px rgba(0, 255, 135, 0.4);
+      }
+      100% {
+        box-shadow: 0 0 35px var(--lime-neon), 0 0 65px rgba(163, 230, 53, 0.6);
+      }
+    }
+
+    /* ตัวหนังสือสีสันสดใสมีแสงนีออน */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #00ff87, #a3e635, #38ef7d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(0, 255, 135, 0.3);
+      margin-bottom: 0.3rem;
+    }
+
+    .job-title {
+      color: var(--green-light);
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    /* หัวข้อประจำส่วน */
+    h2 {
+      font-size: 1.5rem;
+      color: var(--emerald-glow);
+      border-left: 4px solid var(--lime-neon);
+      padding-left: 12px;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
+    }
+
+    p {
+      color: #e2e8f0;
+      font-size: 1.05rem;
+    }
+
+    /* เส้นประวัติการศึกษา */
+    .edu-timeline {
+      border-left: 2px solid rgba(0, 255, 135, 0.3);
+      margin-left: 10px;
+      padding-left: 20px;
+    }
+
+    .edu-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+
+    /* จุดเรืองแสงบน Timeline */
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--lime-neon);
+      box-shadow: 0 0 10px var(--lime-neon);
+    }
+
+    .edu-year {
+      color: var(--lime-neon);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .edu-item h3 {
+      color: #ffffff;
+      font-size: 1.15rem;
+    }
+
+    .edu-school {
+      color: var(--text-glow);
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- ส่วนโปรไฟล์ -->
+    <div class="card profile-header">
+      <div class="profile-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300" alt="รูปโปรไฟล์" class="profile-img">
+      </div>
+      <h1>ชื่อจริง นามสกุล</h1>
+      <p class="job-title">🌿 นักพัฒนาเว็บไซต์ / Web Developer</p>
+    </div>
+
+    <!-- ส่วนประวัติส่วนตัว -->
+    <div class="card">
+      <h2>ประวัติส่วนตัว</h2>
+      <p>
+        สวัสดีครับ ผมมีความสนใจและหลงใหลในการพัฒนา Web Application ด้วยเทคโนโลยีสมัยใหม่ 
+        ชื่นชอบการออกแบบที่เข้าถึงธรรมชาติและทันสมัย มีทักษะในการทำงานร่วมกับผู้อื่น 
+        และพร้อมที่จะเรียนรู้สิ่งใหม่ๆ ตลอดเวลา เพื่อสร้างสรรค์ผลงานที่มีคุณภาพ
+      </p>
+    </div>
+
+    <!-- ส่วนประวัติการศึกษา -->
+    <div class="card">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-year">พ.ศ. 2561 - 2565</div>
+          <h3>ปริญญาตรี วิศวกรรมคอมพิวเตอร์</h3>
+          <div class="edu-school">มหาวิทยาลัยเทคโนโลยี... | เกรดเฉลี่ย: 3.50</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">พ.ศ. 2555 - 2561</div>
+          <h3>มัธยมศึกษาตอนปลาย (วิทย์-คณิต)</h3>
+          <div class="edu-school">โรงเรียนมัธยม... | เกรดเฉลี่ย: 3.80</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // เอฟเฟกต์ค่อยๆ แสดงผลเมื่อโหลดหน้าเว็บ
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+    });
+  </script>
+
+</body>
+</html>
