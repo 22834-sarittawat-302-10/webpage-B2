@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าแนะนำตัว</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --bg-color: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    /* Profile Section */
+    .profile-header {
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-color);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    }
+
+    h1 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 0.2rem; }
+    .job-title { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem; }
+    
+    /* Section Titles */
+    h2 {
+      font-size: 1.4rem;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 10px;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    /* Education Timeline */
+    .edu-timeline {
+      border-left: 2px solid #e5e7eb;
+      margin-left: 10px;
+      padding-left: 20px;
+    }
+
+    .edu-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-color);
+    }
+
+    .edu-year { color: var(--primary-color); font-weight: 600; font-size: 0.9rem; }
+    .edu-school { color: var(--text-muted); font-size: 0.95rem; }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- ส่วนหัว: รูปโปรไฟล์และชื่อ -->
+    <div class="card profile-header" id="profileCard">
+      <!-- สามารถเปลี่ยน URL รูปโปรไฟล์ที่ฝากไว้บน GitHub หรือเว็บฝากรูปอื่นๆ ได้ -->
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300" alt="รูปโปรไฟล์" class="profile-img">
+      <h1>ชื่อจริง นามสกุล</h1>
+      <p class="job-title">นักพัฒนาเว็บไซต์ / Web Developer</p>
+    </div>
+
+    <!-- ส่วนประวัติส่วนตัว -->
+    <div class="card">
+      <h2>ประวัติส่วนตัว</h2>
+      <p>
+        สวัสดีครับ ผมมีความสนใจและหลงใหลในการพัฒนา Web Application ด้วยเทคโนโลยีสมัยใหม่ 
+        มีทักษะในการทำงานร่วมกับผู้อื่น และพร้อมที่จะเรียนรู้สิ่งใหม่ๆ ตลอดเวลา เพื่อนำมาประยุกต์ใช้ในการแก้ปัญหาและสร้างสรรค์ผลงานที่มีคุณภาพ
+      </p>
+    </div>
+
+    <!-- ส่วนประวัติการศึกษา -->
+    <div class="card">
+      <h2>ประวัติการศึกษา</h2>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-year">พ.ศ. 2561 - 2565</div>
+          <h3>ปริญญาตรี วิศวกรรมคอมพิวเตอร์</h3>
+          <div class="edu-school">มหาวิทยาลัยเทคโนโลยี... | เกรดเฉลี่ย: 3.50</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">พ.ศ. 2555 - 2561</div>
+          <h3>มัธยมศึกษาตอนปลาย (วิทย์-คณิต)</h3>
+          <div class="edu-school">โรงเรียนมัธยม... | เกรดเฉลี่ย: 3.80</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // เพิ่ม Effect ง่ายๆ เมื่อโหลดหน้าเว็บเสร็จ
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.6s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 200); // ไล่ระดับเวลาการแสดงผลทีละ Card
+      });
+    });
+  </script>
+
+</body>
+</html>
